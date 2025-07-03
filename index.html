@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Constructor Datathon 2025 for hands-on experience in Systematic Literature Reviews and Meta-Analysis. Open to students worldwide!">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Constructor Datathon: Systematic Literature Reviews & Meta-Analysis</title>
     <!-- Tailwind CSS CDN for quick styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,6 +72,11 @@
             flex-direction: column;
             justify-content: space-between; /* Distribute content vertically */
         }
+        /* Custom focus style for hamburger button */
+        .hamburger:focus {
+            outline: 2px solid #0056b3;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -78,9 +85,9 @@
     <header class="bg-white p-6 shadow-lg rounded-b-lg fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-800">Constructor Datathon</h1>
-            <nav x-data="{ open: false }" class="relative">
+            <nav x-data="{ open: false }" class="relative" role="navigation">
                 <!-- Hamburger button (mobile) -->
-                <button @click="open = !open" class="md:hidden flex items-center px-3 py-2 border rounded text-blue-700 border-blue-700 hover:bg-blue-50 focus:outline-none" :aria-expanded="open.toString()" aria-label="Toggle navigation">
+                <button @click="open = !open" class="hamburger md:hidden flex items-center px-3 py-2 border rounded text-blue-700 border-blue-700 hover:bg-blue-50 focus:outline-none" :aria-expanded="open.toString()" aria-label="Toggle navigation">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
